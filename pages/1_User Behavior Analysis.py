@@ -65,6 +65,7 @@ keu_num = p.index.tolist().index(key)
 # 绘制帕累托图
 # 绘制帕累托图
 fig, ax = plt.subplots(figsize=(14, 6))
+plt.rcParams['font.sans-serif'] = 'SimHei'
 course_num[:50].plot(kind='bar', ax=ax) # 绘制柱形图
 p.plot(style='--', secondary_y=True, color='b', ax=ax)
 ax.axvline(keu_num, color='r', linestyle='--')
