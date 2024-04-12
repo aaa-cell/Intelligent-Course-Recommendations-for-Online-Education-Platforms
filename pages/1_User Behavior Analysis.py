@@ -80,7 +80,7 @@ st.pyplot(fig)
 
 st.write("## 收费差异与学习进度的关系")
 study['learn_process'] = study['learn_process'].astype(int)
-learn = study.groupby(by='course_id')['learn_process','price'].mean() # 统计每门课程的平均进度和价格
+learn = study.groupby(by='course_id').agg({['learn_process','price']}:'mean') # 统计每门课程的平均进度和价格
 # 在Streamlit中显示图表
 fig = sns.pairplot(data=learn, diag_kind='kde')
 st.pyplot(fig)
